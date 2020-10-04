@@ -1,0 +1,15 @@
+{
+    "name": "PoolingExamples",
+    "references": [
+        "GUID:e5c5fdd4ab7f8c04d8006fe644a94a3e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
