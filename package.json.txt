@@ -1,0 +1,7 @@
+{
+  "name": "com.videojames.core",
+  "version": "0.1.0",
+  "displayName": "VideoJames.Core",
+  "description": "Core components for all VideoJames projects",  
+  "hideInEditor": true
+}
