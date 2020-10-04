@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace VideoJames.Core.Timing
@@ -65,7 +66,9 @@ namespace VideoJames.Core.Timing
         {
             List<TickAction> expiredActions = new List<TickAction>();
 
-            foreach(var tickAction in _updateActions[tickUpdateType])
+            List<TickAction> actions = _updateActions[tickUpdateType].ToList<TickAction>();
+
+            foreach(var tickAction in actions)
             {
                 if (tickAction.LastInvokeTime + tickAction.InvokeInterval <= Time.time)
                 {
