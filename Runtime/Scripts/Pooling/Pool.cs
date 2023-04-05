@@ -5,11 +5,11 @@ namespace VideoJames.Core.Pooling
 {
     public static class Pool<T> where T : IPooledObject<T>
     {
-        private static Dictionary<T, Queue<T>> poolQueues = new Dictionary<T, Queue<T>>();
+        private static readonly Dictionary<T, Queue<T>> poolQueues = new Dictionary<T, Queue<T>>();
 
         public static T GetNextObject(T key)
         {
-            var nextObject = poolQueues[key].Dequeue();
+            T nextObject = poolQueues[key].Dequeue();
             return nextObject;            
         }
 
@@ -26,9 +26,9 @@ namespace VideoJames.Core.Pooling
                 poolQueues.Add(key, new Queue<T>(count));
             }
             var queue = poolQueues[key];
-            for (var i = 0; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
-                var clonedObject = key.CreateObjectMethod.Invoke();
+                T clonedObject = key.CreateObjectMethod.Invoke();
                 clonedObject.Key = key;
                 queue.Enqueue(clonedObject);
             }
