@@ -30,7 +30,7 @@ namespace VideoJames.Core.Pooling
             {
                 T clonedObject = key.CreateObjectMethod.Invoke();
                 clonedObject.Key = key;
-                queue.Enqueue(clonedObject);
+                ReturnObject(clonedObject);
             }
         }
     }
